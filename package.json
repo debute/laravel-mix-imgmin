@@ -1,6 +1,6 @@
 {
   "name": "laravel-mix-imgmin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Laravel Mix extension to compress images [png,jpg,jpeg,svg,gif,bmp,ico] with TinyPNG.",
   "main": "index.js",
   "files": [
