@@ -21,7 +21,8 @@ class imgmin {
     register(options) {
         this.options = Object.assign({
             input: 'resources/img',
-            output: 'public/img',
+            publicPath: 'public',
+            output: 'img',
             tinyPngKey: null,
             debug: false
         }, options || {});
@@ -31,13 +32,14 @@ class imgmin {
         let imgsPath = '/**/*.{svg,gif,bmp,ico}';
         let self = this;
         let imgsRelativePath = path.resolve(__dirname, this.options.input) + path.sep;
+        let outputPath = this.options.publicPath + '/' + this.options.output;
 
         if(this.options.tinyPngKey === null) {
             imgsPath = '/**/*.{png,jpg,jpeg,svg,gif,bmp,ico}';
         }
 
         gulp.src(this.options.input + imgsPath)
-            .pipe(changed(this.options.output))
+            .pipe(changed(outputPath))
             .pipe(imagemin([
                 imagemin.gifsicle({interlaced: true}),
                 imagemin.jpegtran({progressive: true}),
@@ -49,7 +51,7 @@ class imgmin {
                     ]
                 })
             ]))
-            .pipe(gulp.dest(this.options.output))
+            .pipe(gulp.dest(outputPath))
             .pipe(through.obj((file, enc, _cb) => {
                 let filePath = file.path.replace(imgsRelativePath, '');
 
@@ -60,7 +62,7 @@ class imgmin {
 
         if(this.options.tinyPngKey !== null) {
             gulp.src(this.options.input + '/**/*.{png,jpg,jpeg}')
-                .pipe(changed(this.options.output))
+                .pipe(changed(outputPath))
                 .pipe(plumber())
                 .pipe(tinypng({
                     key: this.options.tinyPngKey,
@@ -68,7 +70,7 @@ class imgmin {
                     log: self.options.debug,
                 }))
                 .pipe(plumber.stop())
-                .pipe(gulp.dest(this.options.output))
+                .pipe(gulp.dest(outputPath))
                 .pipe(through.obj((file, enc, _cb) => {
                     let filePath = file.path.replace(imgsRelativePath, '');
 
@@ -81,7 +83,7 @@ class imgmin {
         gulp.src([
             this.options.input + '/**/*',
             "!" + this.options.input + '/**/*.{png,jpg,jpeg,svg,gif,bmp,ico}'
-        ]).pipe(gulp.dest(this.options.output))
+        ]).pipe(gulp.dest(outputPath))
             .pipe(through.obj((file, enc, _cb) => {
                 let filePath = file.path.replace(imgsRelativePath, '');
 

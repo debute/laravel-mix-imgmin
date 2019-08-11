@@ -41,7 +41,8 @@ If nothing is passed to the extension inside your Laravel Mix config, the follow
 ```js
 {
     input: 'resources/img',
-    output: 'public/img',
+    publicPath: 'public',
+    output: 'img',
     tinyPngKey: null,
     debug: false
 }
@@ -50,6 +51,7 @@ If nothing is passed to the extension inside your Laravel Mix config, the follow
 #### Option details
 
 * `input` (string). Your input directory where images are located.
+* `publicPath` (string). Your application's public path.
 * `output` (string). Your output directory where compressed images will be saved.
 * `tinyPngKey` (string or null). Your [TinyPNG](https://tinypng.com/) key. If you don't provide [TinyPNG](https://tinypng.com/) key, then default [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) package will be used. [TinyPNG](https://tinypng.com/) is recommended for the best results.
 * `debug` (boolean). Whenever to log extension events messages to the console.
