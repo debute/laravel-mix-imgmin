@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/debute/laravel-mix-imgmin.git"
+    "url": "git+https://github.com/krehak/laravel-mix-imgmin.git"
   },
   "keywords": [
     "laravel mix",
@@ -37,9 +37,9 @@
   "author": "Patrik Krehák",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/debute/laravel-mix-imgmin/issues"
+    "url": "https://github.com/krehak/laravel-mix-imgmin/issues"
   },
-  "homepage": "https://github.com/debute/laravel-mix-imgmin",
+  "homepage": "https://github.com/krehak/laravel-mix-imgmin",
   "peerDependencies": {
     "laravel-mix": "^4.0.7"
   },
