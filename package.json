@@ -1,6 +1,6 @@
 {
   "name": "laravel-mix-imgmin",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Laravel Mix extension to compress images [png,jpg,jpeg,svg,gif,bmp,ico] with TinyPNG.",
   "main": "index.js",
   "files": [
@@ -41,16 +41,16 @@
   },
   "homepage": "https://github.com/krehak/laravel-mix-imgmin",
   "peerDependencies": {
-    "laravel-mix": "^4.0.7"
+    "laravel-mix": "^6.0"
   },
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-batch": "^1.0.5",
-    "gulp-changed": "^4.0.0",
-    "gulp-imagemin": "^6.0.0",
+    "gulp-changed": "^4.0.2",
+    "gulp-imagemin": "^7.1.0",
     "gulp-plumber": "^1.2.1",
-    "gulp-tinypng-extended": "^2.0.1",
+    "gulp-tinypng-extended": "^3.0.1",
     "gulp-watch": "^5.0.1",
-    "through2": "^3.0.1"
+    "through2": "^4.0.2"
   }
 }

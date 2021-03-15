@@ -55,3 +55,6 @@ If nothing is passed to the extension inside your Laravel Mix config, the follow
 * `output` (string). Your output directory where compressed images will be saved.
 * `tinyPngKey` (string or null). Your [TinyPNG](https://tinypng.com/) key. If you don't provide [TinyPNG](https://tinypng.com/) key, then default [gulp-imagemin](https://www.npmjs.com/package/gulp-imagemin) package will be used. [TinyPNG](https://tinypng.com/) is recommended for the best results.
 * `debug` (boolean). Whenever to log extension events messages to the console.
+
+#### New in version 0.2.x
+* Now supports `laravel-mix` version 6
